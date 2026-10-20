@@ -35,8 +35,10 @@ export function createApp() {
       const rows = validateRows(parseCsv(input.csv));
       const errors = rows.reduce((count, row) => count + row.issues.length, 0);
       if (request.url === '/api/preview') return send(response, 200, { rows, errors });
-      // IMPORT_IMPLEMENTATION
-      return send(response, 501, { error: 'Finish the import endpoint.' });
+      if (errors) return send(response, 422, { error: 'Fix the file before importing.', rows, errors });
+          const added = rows.map(({ sku, name, price }) => ({ sku: sku.trim(), name: name.trim(), price: Number(price) }));
+          products.push(...added);
+          return send(response, 201, { imported: added.length, total: products.length });
     } catch (error) {
       return send(response, 400, { error: error instanceof Error ? error.message : 'Unable to read the CSV.' });
     }
