@@ -2,9 +2,6 @@
 
 Take-home exercise for a Product Engineer.
 
-> Fictional demo. This repository and its candidate pull requests are authored
-> examples for a review product. They are not real hiring submissions.
-
 ## The task
 
 A shop owner uploads a CSV of products. Preview the rows, identify mistakes,
@@ -43,3 +40,8 @@ saving. Both accept `{ "csv": "sku,name,price\nMUG-01,Coffee mug,299" }`.
 `GET /api/products` shows what was actually saved. Restarting clears the data.
 
 This is a small exercise, not a production shop or a deployment recommendation.
+
+## About this repository
+
+This exercise and the two candidate submissions were authored for a review-workflow
+prototype. They do not represent a live vacancy or actual candidate applications.
