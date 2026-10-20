@@ -1,0 +1,13 @@
+{
+  "name": "product-csv-import",
+  "private": true,
+  "type": "module",
+  "description": "Fictional take-home assignment for a product review demo",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node server/main.js",
+    "test": "node --test"
+  }
+}
