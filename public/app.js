@@ -4,7 +4,7 @@ const confirm = document.querySelector('#confirm');
 const status = document.querySelector('#status');
 const rows = document.querySelector('#rows');
 let busy = false;
-const describeIssue = issue => 'Implement error feedback';
+const describeIssue = issue => `${issue.field}: ${issue.message}`;
 const cell = value => { const node = document.createElement('td'); node.textContent = String(value); return node; };
 
 async function request(path) {
